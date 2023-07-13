@@ -20,9 +20,17 @@ public class PrimeiroController {
 	private String nomeCompleto() {
 		return "Hebert Brito";
 	}
-
+	
 	@GetMapping(path = { "/3", "/4", "/5" })
 	private String loveName() {
 		return "Vikas Brito";
 	}
+	
+	
+	
+	
+	
+	
+	
+
 }
