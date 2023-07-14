@@ -22,7 +22,7 @@ import com.estudos.springboot.exerciciosspringboot.models.Cliente;
  *               URL
  */
 
-@RestController()
+@RestController
 @RequestMapping("/clientes") // -> toda classe mapeada para essa URL;
 public class ClenteController {
 
