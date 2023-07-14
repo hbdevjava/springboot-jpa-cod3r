@@ -1,4 +1,4 @@
-package com.estudos.springboot.exerciciosspringboot.controllers;
+package com.estudos.springboot.exerciciosspringboot.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.estudos.springboot.exerciciosspringboot.models.Cliente;
+import com.estudos.springboot.exerciciosspringboot.model.entities.Cliente;
 
 /**
  * @PathVariable é uma anotação do Spring Framework que é utilizada para mapear

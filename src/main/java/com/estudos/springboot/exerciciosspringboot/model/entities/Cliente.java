@@ -1,4 +1,4 @@
-package com.estudos.springboot.exerciciosspringboot.models;
+package com.estudos.springboot.exerciciosspringboot.model.entities;
 
 import java.io.Serializable;
 import java.util.Objects;

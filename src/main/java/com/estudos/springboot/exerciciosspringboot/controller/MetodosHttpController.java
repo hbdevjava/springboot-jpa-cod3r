@@ -1,4 +1,4 @@
-package com.estudos.springboot.exerciciosspringboot.controllers;
+package com.estudos.springboot.exerciciosspringboot.controller;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
