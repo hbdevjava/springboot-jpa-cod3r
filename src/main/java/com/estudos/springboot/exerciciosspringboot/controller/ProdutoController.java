@@ -70,10 +70,10 @@ public class ProdutoController {
 		return produtoRepository.findAll();
 	}
 	
-	@GetMapping("/nome/{parteNome}")
-	
-	public List<Produto> obterProdutoPorNome(@PathVariable String parteNome) {
-		return produtoRepository.findByNomeContaining(parteNome);
+	@GetMapping(path = "/nome/{parteNome}")
+	public Iterable<Produto> obterProdutosPorNome(@PathVariable String parteNome) {
+//		return produtoRepository.findByNomeContainingIgnoreCase(parteNome);
+		return produtoRepository.searchByNomeLike(parteNome);
 	}
 	
 	
