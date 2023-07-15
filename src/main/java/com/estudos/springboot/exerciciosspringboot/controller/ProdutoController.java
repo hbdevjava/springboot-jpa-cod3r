@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -60,13 +62,21 @@ public class ProdutoController {
 	public Produto alterarProduto(@Valid Produto produto) {
 		produtoRepository.save(produto);
 		return produto;
-
 	}
-
+	
 	@GetMapping
+	@ResponseBody
 	public List<Produto> obterProdutos() {
 		return produtoRepository.findAll();
 	}
+	
+	@GetMapping("/nome/{parteNome}")
+	
+	public List<Produto> obterProdutoPorNome(@PathVariable String parteNome) {
+		return produtoRepository.findByNomeContaining(parteNome);
+	}
+	
+	
 
 	@GetMapping("/{id}")
 	@ResponseBody
