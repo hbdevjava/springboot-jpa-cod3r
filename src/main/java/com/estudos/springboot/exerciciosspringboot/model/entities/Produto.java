@@ -6,6 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * A interface Serializable é uma interface de marcador em Java que é usada para
@@ -25,9 +28,17 @@ public class Produto implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotBlank//-> valida != vazio
 	private String nome;
-	private Double preco;
+	
+	@Min(0)
+	private Double preco;	
+	
+	@Min(0)
+	@Max(1)
 	private Double desconto;
+	
 
 	public Produto() {
 

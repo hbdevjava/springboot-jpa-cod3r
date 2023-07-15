@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.estudos.springboot.exerciciosspringboot.model.entities.Produto;
 import com.estudos.springboot.exerciciosspringboot.model.repositories.ProdutoRepository;
 
+import jakarta.validation.Valid;
+
 /**
  * @ResponseBody é uma anotação do Spring MVC que indica que o valor retornado
  *               pelo método deve ser vinculado diretamente ao corpo da resposta
@@ -43,7 +45,7 @@ public class ProdutoController {
 //  SIMPLIFICANDO O CODIGO ACIMA
 	@PostMapping
 	@ResponseBody
-	public Produto novoProduto(Produto produto) {
+	public Produto novoProduto(@Valid Produto produto) {//-> @Valid valida as regras definidas pela anotation
 		produtoRepository.save(produto);
 		return produto;
 	}
