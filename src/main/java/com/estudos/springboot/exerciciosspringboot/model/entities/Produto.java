@@ -18,7 +18,6 @@ import jakarta.persistence.Id;
  * 
  */
 
-
 @Entity
 public class Produto implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,13 +26,18 @@ public class Produto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	private Double preco;
+	private Double desconto;
 
 	public Produto() {
 
 	}
 
-	public Produto(String nome) {
+	public Produto(String nome, Double preco, Double desconto) {
+		super();
 		this.nome = nome;
+		this.preco = preco;
+		this.desconto = desconto;
 	}
 
 	public Long getId() {
@@ -50,6 +54,24 @@ public class Produto implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+
+	public Double getDesconto() {
+		return desconto;
+	}
+
+	public void setDesconto(Double desconto) {
+		this.desconto = desconto;
 	}
 
 	@Override
