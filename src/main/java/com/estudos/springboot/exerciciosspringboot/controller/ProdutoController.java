@@ -30,15 +30,24 @@ public class ProdutoController {
 	//-> O Spring cria esse objeto "produtoRepository" e injeta nela metodos e comportamentos
 
 
+//	@PostMapping
+//	@ResponseBody
+//	public Produto novoProduto(@RequestParam String nome, 
+//			@RequestParam Double preco, 
+//			@RequestParam Double desconto) {
+//		Produto produto = new Produto(nome, preco, desconto);
+//		produtoRepository.save(produto);
+//		return produto;
+//	}
+	
+//  SIMPLIFICANDO O CODIGO ACIMA
 	@PostMapping
 	@ResponseBody
-	public Produto novoProduto(@RequestParam String nome, 
-			@RequestParam Double preco, 
-			@RequestParam Double desconto) {
-		Produto produto = new Produto(nome, preco, desconto);
+	public Produto novoProduto(Produto produto) {
 		produtoRepository.save(produto);
 		return produto;
 	}
+		
 	
 
 }
